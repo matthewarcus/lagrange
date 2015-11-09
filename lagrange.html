@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+ 
+<meta charset="utf-8">
+<title>Minimal Example</title>
+ 
+<canvas id="mainCanvas" width="800" height="800" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script src="lagrange.js"></script>
+<script src="simulate.js"></script>
+<script>
+  var phi = (Math.sqrt(5)-1)/2;
+  var system = new Lagrange.DoublePendulum(1,1,1,phi,1)
+  //var system = new Lagrange.Hookean2(10,1)
+  //var system = new Lagrange.OrbitPolar(3);
+  //var system = new Lagrange.DoubleOrbit(2);
+  Lagrange.simulate(document.getElementById("mainCanvas"), system);
+</script>
+
+<noscript>Your browser either does not support JavaScript, or has it turned off.</noscript>
