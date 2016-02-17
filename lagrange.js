@@ -178,9 +178,9 @@ var Lagrange = {};
         pv[1] += pp[1]*eps;
         // pv is PD of L at t+eps
         // Now find new v' st pdiff(Lp,v') = pv
-        // Initial guess is v, use Jacobian to refine guess
+        // Initial guess is v, use Hessian to refine guess
         // F(v') = F(v+dv) = F(v) + (JF)(dv), here F is the partial
-        // derivatives of L at v (so it's really a Hessian).
+        // derivatives of L at v.
         // Then v' = v + dv where dv = inv(JF)(F(v')-F(v))
         // Doing this step once seems to be enough
         // I'm surprised it works at all really.
